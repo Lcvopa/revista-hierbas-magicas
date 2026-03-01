@@ -113,8 +113,22 @@ body {
 /* Herb Content Styling */
 .page-wrap {
     flex-grow: 1;
-    /* Hide overflow to prevent breaking layout */
     overflow-y: hidden;
+    /* Hide on desktop, allow scroll on mobile */
+}
+
+/* Custom scrollbar for page-wrap so it looks good on mobile */
+.page-wrap::-webkit-scrollbar {
+    width: 4px;
+}
+
+.page-wrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.page-wrap::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
 
 .herb-entry {
@@ -196,6 +210,50 @@ body {
     line-height: 1.6;
     text-align: justify;
     hyphens: auto;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 800px) {
+    .page-content {
+        padding: 1.2rem;
+    }
+
+    .page-wrap {
+        overflow-y: auto;
+        /* Allow scrolling if text is too long */
+        padding-right: 5px;
+        /* Space for scrollbar */
+    }
+
+    .herb-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .meta-data {
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .magic-uses {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-top: 0.5rem;
+    }
+
+    .herb-emoji-img {
+        font-size: 80px;
+        padding: 10px 0;
+        margin: 0.5rem 0;
+    }
+
+    .herb-img {
+        max-height: 150px;
+    }
+
+    .cover-text h1 {
+        font-size: 1.8rem;
+    }
 }
 
 .page-footer {
