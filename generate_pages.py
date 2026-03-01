@@ -48,9 +48,16 @@ for i in range(1, len(parts), 2):
             else:
                 formatted_content += f'<p>{line}</p>\n'
 
+    import os
+    img_path = f'assets/herb_{name.lower().replace(" ", "_")}.png'
+    img_tag = ""
+    if os.path.exists(img_path):
+        img_tag = f'<img src="{img_path}" alt="{name}" class="herb-img">'
+
     entry = f'''<div class="herb-entry">
     <h3 class="herb-title">{name}</h3>
     <div class="herb-details">
+        {img_tag}
         {formatted_content}
     </div>
 </div>

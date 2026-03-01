@@ -122,6 +122,53 @@ body {
     text-align: center;
 }
 
+.herb-img {
+    width: 80%;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    filter: sepia(0.2) contrast(1.1);
+}
+
+.herb-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.herb-img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.herb-emoji-img {
+    font-size: 150px;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    background: radial-gradient(circle, rgba(253, 251, 247, 0) 40%, rgba(16, 185, 129, 0.1) 100%);
+    border-radius: 8px;
+    padding: 20px 0;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.herb-emoji-img:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 8px 20px rgba(16, 185, 129, 0.4));
+}
+
 .herb-title {
     font-family: var(--font-heading);
     font-size: 1.8rem;
