@@ -1,0 +1,173 @@
+/* Base Styles & Typography */
+:root {
+    --bg-dark: #0f172a;
+    --text-primary: #1e293b;
+    --text-secondary: #334155;
+    --accent: #10b981;
+    --gold: #b45309;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --page-bg: #fdfbf7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: radial-gradient(circle at center, #1e293b, var(--bg-dark));
+}
+
+.flip-book-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Book Styles */
+.page {
+    background-color: var(--page-bg);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+    /* Internal page shadow */
+    color: var(--text-primary);
+    overflow: hidden;
+    position: relative;
+    /* Soft border for realism */
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-content {
+    padding: 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Cover Styling */
+.cover-page,
+.back-cover {
+    background-color: #0b1120;
+    color: #fbbf24;
+    border: none;
+}
+
+.cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.cover-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.cover-text h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: #fbbf24;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.cover-text h2 {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.book-intro {
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-size: 2rem;
+}
+
+/* Herb Content Styling */
+.page-wrap {
+    flex-grow: 1;
+    /* Hide overflow to prevent breaking layout */
+    overflow-y: hidden;
+}
+
+.herb-entry {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.herb-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    padding-bottom: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+.meta-data {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.meta-data strong {
+    color: var(--gold);
+}
+
+.magic-uses {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.page-footer {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: #94a3b8;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 5px;
+}
+
+.instructions h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+/* StPageFlip internal classes override */
+.stf__wrapper {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
